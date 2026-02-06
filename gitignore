@@ -1,0 +1,39 @@
+__pycache__/
+uploads/
+.env
+
+# 🎬 AI Video Clipper
+
+AI-powered application to automatically generate up to **100 short vertical clips**
+from a single long video.
+
+## 🚀 Features
+- Auto clip generation
+- Podcast / Ceramah / Gaming modes
+- Vertical 9:16 output
+- Subtitle-ready
+- Lightweight & scalable
+
+## 🛠 Tech Stack
+- Frontend: HTML/CSS/JS
+- Backend: Python (Flask)
+- Video: FFmpeg
+- Speech-to-text: Whisper
+
+## 📦 Use Cases
+- Content creators
+- Podcasters
+- Religious media
+- Gaming streamers
+
+## 💡 Monetization
+- Sell clipping service
+- SaaS subscription
+- Creator tools
+
+## ⚠️ Disclaimer
+This repository provides a framework.
+Full AI automation can be extended with Whisper & FFmpeg.
+
+---
+Built with ❤️ for creators.
