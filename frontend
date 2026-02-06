@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Video Clipper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Arial;background:#0f172a;color:#fff;padding:20px}
+.card{max-width:420px;margin:auto;background:#020617;padding:20px;border-radius:10px}
+button,input{width:100%;padding:10px;margin-top:10px}
+.progress{background:#1e293b;height:16px;border-radius:10px;overflow:hidden}
+.bar{height:100%;width:0;background:#22c55e}
+small{color:#94a3b8}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>🎬 AI Video Clipper</h2>
+<small>Auto-generate up to 100 short clips</small>
+
+<input type="file" id="video" accept="video/*">
+<button onclick="upload()">Upload & Process</button>
+
+<div class="progress"><div class="bar" id="bar"></div></div>
+<p id="status"></p>
+</div>
+
+<script>
+function upload(){
+  const f=document.getElementById("video").files[0];
+  if(!f){alert("Select video");return}
+  document.getElementById("status").innerText="Processing...";
+  let p=0,bar=document.getElementById("bar");
+  let i=setInterval(()=>{
+    p+=5;bar.style.width=p+"%";
+    if(p>=100){clearInterval(i);document.getElementById("status").innerText="Done";}
+  },400);
+}
+</script>
+
+</body>
+</html>
