@@ -1,0 +1,37 @@
+from flask import Flask, request, jsonify
+from clipper import process_video
+import os
+
+app = Flask(__name__)
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+@app.route("/upload", methods=["POST"])
+def upload():
+    video = request.files["video"]
+    path = os.path.join(UPLOAD_FOLDER, video.filename)
+    video.save(path)
+
+    clips = process_video(path)
+    return jsonify({
+        "status": "success",
+        "clips_generated": clips
+    })
+
+if __name__ == "__main__":
+    app.run(debug=True)
+flask
+ffmpeg-python
+openai-whisper
+
+
+def process_video(video_path):
+    """
+    Placeholder AI logic:
+    - Transcribe video
+    - Detect viral moments
+    - Cut into clips
+    """
+    max_clips = 100
+    # simulate result
+    return max_clips
